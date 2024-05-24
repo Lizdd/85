@@ -1,0 +1,23 @@
+welcome_1 = pygame.mixer.Sound(os.getcwd() + '\\audio/intro1.wav')
+welcome_2 = pygame.mixer.Sound(os.getcwd() + '\\audio/intro2.wav')
+audio_crash = pygame.mixer.Sound(os.getcwd() + '\\audio/car_crash.wav')
+audio_ignition = pygame.mixer.Sound(os.getcwd() + '\\audio/ignition.wav')
+pygame.mixer.music.load(os.getcwd()+'\\audio/running.wav')
+def car(x, y, direction):
+if direction==0:
+game_layout_display.blit(car_photo, (x, y))
+if direction==-1:
+game_layout_display.blit(left_c, (x, y))
+if direction==1:
+game_layout_display.blit(right_c, (x, y))
+def title_msg():
+animation_height=screen_height
+pygame.mixer.Sound.play(welcome_1)
+while animation_height > -600:
+game_layout_display.fill(white_color)
+things(screen_width / 2 - t_width / 2, animation_height)
+animation_height-=1.5
+pygame.display.update()
+title_message_display(0, 0, black_color)
+time.sleep(0.1)
+pygame.mixer.Sound.play(welcome_2)
